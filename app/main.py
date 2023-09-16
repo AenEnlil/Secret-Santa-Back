@@ -1,7 +1,10 @@
 from fastapi import FastAPI
+from .config import get_settings
 
 
 def get_application() -> FastAPI:
+    settings = get_settings()
+
     application = FastAPI()
 
     @application.get("/")
